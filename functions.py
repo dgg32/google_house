@@ -6,6 +6,15 @@ import time
 KEY = config.API_KEY
 
 def google_geocoding(address):
+    """get the coordinates of an address
+    
+    Args:
+        address (str): the address
+
+    
+    Returns:
+        dict: return dict of latitude and longitude
+    """
     
     geocodeing_api = f"https://maps.googleapis.com/maps/api/geocode/json?key={KEY}&address={address}"
 
@@ -16,6 +25,19 @@ def google_geocoding(address):
     return {"latitude": lat, "longitude": lng}
 
 def google_nearbysearch(latitude, longitude, establishment, radius_in_meter=1000):
+    """get the list of establishments within a radius for a pair of lat-lon
+    
+    Args:
+        latitude (str): the latitude of the place
+        longitude (str): the longitude of the place
+        establishment (str): the type of establishment, such as school and supermarket
+        radius_in_meter (int): search radius in meter
+
+    
+    Returns:
+        list: return a list of establishments
+    """
+
     query = f"https://maps.googleapis.com/maps/api/place/nearbysearch/json?key={KEY}&type={establishment}&location={latitude},{longitude}&radius={radius_in_meter}"
 
     result = json.loads(requests.get(query).text)
@@ -39,6 +61,16 @@ def google_nearbysearch(latitude, longitude, establishment, radius_in_meter=1000
 
 
 def driving_time_and_distance(ori, dest):
+    """get the dict of distance between two places
+    
+    Args:
+        ori (str): Place A
+        dest (str): Place B
+
+    
+    Returns:
+        dict: return a dict of distance description
+    """
 
     url = f"https://maps.googleapis.com/maps/api/distancematrix/json?key={KEY}&origins={ori}&destinations={dest}&mode=driving&language=en-EN&sensor=false"
     result= json.loads(requests.get(url).text)
