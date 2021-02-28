@@ -4,7 +4,6 @@ This repository hosts the code for the blog post: [Go Geospatial in Home Finding
 
 
 # Files
-
 It contains three files. "functions.py" contains the functions for interacting with Google APIs. "config.py" sets the API key and "demo.py" shows how to use the functions.
 
 
