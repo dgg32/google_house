@@ -1,6 +1,6 @@
 # Use Google APIs for a house hunt
 
-This repository hosts the code for the blog post: Check the Neighborhood with Google Cloud in Your House Hunt
+This repository hosts the code for the blog post: [Go Geospatial in Home Finding with Google Cloud](https://dgg32.medium.com/get-geo-data-from-google-cloud-for-your-next-new-home-f0a02c185d5f)
 
 
 # Files
